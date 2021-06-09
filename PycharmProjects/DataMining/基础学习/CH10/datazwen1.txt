@@ -1,0 +1,4 @@
+人生苦短，我用python utf-8（pycharm手动新建file的文本文件默认是utf-8的）
+故需要用encoding=utf-8指令来解码字符串。
+pycharm的文本编辑器读取，新建的文本编码方式都是ubf-8,但是编程的编码方式，即读取
+和写入的默认编码方式是GBK，默认方式是decoding = GBK，
