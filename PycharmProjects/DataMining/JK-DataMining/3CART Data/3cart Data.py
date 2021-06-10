@@ -10,8 +10,7 @@ writer = pd.ExcelWriter(r'C:\Users\17180\Desktop\3CART Data.xlsx')
 def lis(ele):
     element = re.match(r'OUTPUT/\sFA[(](\w*)[)]', ele)
     if element:
-        name = element.group(1)
-    return element
+        return element  # name = element.group(1)
 
 
 def datetime(dt):
@@ -29,7 +28,7 @@ for p in path:
     n = path[t][0:9]
     t += 1
     datum = s = dataset = 0
-    list1 = []
+    list1, datetime1 = [], []
     datadict = {}
     none = [None, None, None, None, None, None, None, None, None, None, None]
     with open(p, 'r', encoding='utf-8') as file:
@@ -83,10 +82,10 @@ for p in path:
             none = [None, None, None, None, None, None, None, None, None, None, None]
 
     # 字典转化为DataFrame形式
-    datafinally = pd.DataFrame.from_dict(datadict, orient='index',
-                                         columns=['X轴坐标', 'X轴偏差', 'X-IN/OUT', 'Y轴坐标', 'Y轴偏差', 'Y-IN/OUT', 'Z轴坐标',
-                                                  'Z轴偏差', 'Z-IN/OUT', '日期', '时间'])
-    datafinally.index.name = '焊点编号'
-    datafinally.columns.name = '数据名称'
-    datafinally.to_excel(writer, sheet_name=n)
+    data_finally = pd.DataFrame.from_dict(datadict, orient='index',
+                                          columns=['X轴坐标', 'X轴偏差', 'X-IN/OUT', 'Y轴坐标', 'Y轴偏差', 'Y-IN/OUT', 'Z轴坐标',
+                                                   'Z轴偏差', 'Z-IN/OUT', '日期', '时间'])
+    data_finally.index.name = '焊点编号'
+    data_finally.columns.name = '数据名称'
+    data_finally.to_excel(writer, sheet_name=n)
 writer.save()
