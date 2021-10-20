@@ -1,0 +1,4 @@
+﻿  main.cpp
+C:\Users\17180\Desktop\Code\Study-Cave\C Project\Project001\main.cpp(15,13): warning C4305: “=”: 从“double”到“float”截断
+C:\Users\17180\Desktop\Code\Study-Cave\C Project\Project001\main.cpp(20,15): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+  Project001.vcxproj -> C:\Users\17180\Desktop\Code\Study-Cave\C Project\Project001\Debug\Project001.exe
